@@ -22,20 +22,20 @@ mkdir opencv_software
 cd opencv_software
 
 # get OpenCV 3.1.0 standard modules from source
-wget -O opencv.zip https://github.com/Itseez/opencv/archive/3.1.0.zip
+wget -O opencv.zip https://github.com/opencv/opencv/archive/3.3.0.zip
 unzip opencv.zip
 
 # get OpenCV 3.1.0 contributed/extra modules from source
-wget -O opencv_contrib.zip https://github.com/Itseez/opencv_contrib/archive/3.1.0.zip
+wget -O opencv_contrib.zip https://github.com/opencv/opencv_contrib/archive/3.3.0.zip
 unzip opencv_contrib.zip
 
 # prepare for install using cmake
-cd opencv-3.1.0
+cd opencv-3.3.0
 mkdir build
 cd build
 cmake -D CMAKE_BUILD_TYPE=RELEASE \
 	-D CMAKE_INSTALL_PREFIX=/usr/local \
-	-D OPENCV_EXTRA_MODULES_PATH=~/opencv_software/opencv_contrib-3.1.0/modules ..
+	-D OPENCV_EXTRA_MODULES_PATH=~/opencv_software/opencv_contrib-3.3.0/modules ..
 
 # here we compile OpenCV. The "-j4" flag allows us to compile using four cores to speed up the process
 # NOTE: may take quite some time depending on your platform
@@ -72,4 +72,4 @@ select yn in "Yes" "No"; do
 done
 
 cd ~/opencv_software
-rm -rf opencv-3.1.0 opencv_contrib-3.1.0
+rm -rf opencv-3.3.0 opencv_contrib-3.3.0
