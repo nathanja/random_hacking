@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # install developer tools (you should have most of these already)
-sudo apt-get -y install build-essential git cmake pkg-config
+sudo apt-get -y install build-essential cmake pkg-config
 
 # install image I/O packages
 sudo apt-get -y install libjpeg-dev libtiff5-dev libjasper-dev libpng12-dev
@@ -11,10 +11,19 @@ sudo apt-get -y install libavcodec-dev libavformat-dev libswscale-dev libv4l-dev
 sudo apt-get -y install libxvidcore-dev libx264-dev
 
 # install GTK dev library to allow us to compile "highgui" module and display images
-sudo apt-get -y install libgtk2.0-dev
+sudo apt-get -y install libgtk2.0-dev libgtk-3-dev
 
 # install packages that optimize some opencv functions
 sudo apt-get -y install libatlas-base-dev gfortran
+
+# python
+sudo apt-get -y install python2.7-dev python3-dev
+
+#virtualenv
+#sudo pip install virtualenv virtualenvwrapper
+#echo "export WORKON_HOME=$HOME/.virtualenvs" >> ~/.profile
+#echo "source /usr/local/bin/virtualenvwrapper.sh" >> ~/.profile
+#source ~/.profile
 
 # make directory to dump all our openCV software for later install
 cd ~
